@@ -1,6 +1,5 @@
 package util;
 
-import contstants.SeleniumConstants;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class SeleniumUtils{
-    private static WebDriver driver = Driver.getDriver();
+    private static final WebDriver driver = Driver.getDriver();
 
     public static void sleep(long milliSeconds){
         try{
@@ -26,10 +25,11 @@ public class SeleniumUtils{
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         explicitWait.until(ExpectedConditions.visibilityOf(element));
     }
-    public static void waitForVisibilityOfAll(List<WebElement> list){
-        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        explicitWait.until(ExpectedConditions.visibilityOfAllElements(list));
-    }
+
+//    public static void waitForVisibilityOfAll(List<WebElement> list){
+//        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        explicitWait.until(ExpectedConditions.visibilityOfAllElements(list));
+//    }
 
     public static void waitForVisibilityOfElement(WebElement element){
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
