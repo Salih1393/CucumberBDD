@@ -14,8 +14,9 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-reports/cucumberTestReports.json",
                 "rerun:target/rerun.txt"
         },
-        tags = {"@ff"},
+        tags = "@ff",
         dryRun = false
 )
 public class BookingPage_Runner {
+        // This is the test runner class to run the Cucumber tests.
 }

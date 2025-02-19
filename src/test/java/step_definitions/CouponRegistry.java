@@ -1,29 +1,27 @@
 package step_definitions;
 
-import io.cucumber.core.api.TypeRegistry;
-import io.cucumber.core.api.TypeRegistryConfigurer;
-import io.cucumber.datatable.DataTableType;
-import io.cucumber.datatable.TableEntryTransformer;
+import io.cucumber.java.DataTableType;
 import testData.Coupon;
 
-import java.util.Locale;
 import java.util.Map;
 
-public class CouponRegistry implements TypeRegistryConfigurer {
+public class CouponRegistry {
 
-    @Override
-    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+    // Using @DataTableType to map the data table to a Coupon object
+    @DataTableType
+    public Coupon transform(Map<String, String> entry) {
+        // Extract values from the data table and construct a Coupon object
+        String percentage = entry.get("percentage");
+        String maxUse = entry.get("max use");
+        String couponCode = entry.get("coupon code");
+        String startDate = entry.get("start date");
+        String endDate = entry.get("end date");
 
-        typeRegistry.defineDataTableType(new DataTableType(Coupon.class, new TableEntryTransformer<Coupon>() {
-            @Override
-            public Coupon transform(Map<String, String> entry){
-                return new Coupon(entry.get("percentage"), entry.get("max use"), entry.get("coupon code"), entry.get("start date"), entry.get("end date"));
-            }
-        }));
-    }
+        // Make sure the required values are present and return the Coupon object
+        if (percentage == null || maxUse == null || couponCode == null || startDate == null || endDate == null) {
+            throw new IllegalArgumentException("Missing required coupon data");
+        }
 
-    @Override
-    public Locale locale() {
-        return Locale.ENGLISH;
+        return new Coupon(percentage, maxUse, couponCode, startDate, endDate);
     }
 }

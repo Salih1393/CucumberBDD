@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-reports/cucumberTestReports.json",
                 "rerun:target/rerun.txt"
         },
-        tags = {"@homePage"}
+        tags = "@homePage"
 )
 public class HomePage_Runner {
 }

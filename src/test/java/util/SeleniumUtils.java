@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class SeleniumUtils{
@@ -22,22 +23,22 @@ public class SeleniumUtils{
     }
 
     public static void waitForClickability(WebElement element){
-        WebDriverWait explicitWait = new WebDriverWait(Driver.getDriver(), SeleniumConstants.EXPLICIT_WAIT_TIME);
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         explicitWait.until(ExpectedConditions.visibilityOf(element));
     }
     public static void waitForVisibilityOfAll(List<WebElement> list){
-        WebDriverWait explicitWait = new WebDriverWait(driver, SeleniumConstants.EXPLICIT_WAIT_TIME);
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         explicitWait.until(ExpectedConditions.visibilityOfAllElements(list));
     }
 
     public static void waitForVisibilityOfElement(WebElement element){
-        WebDriverWait explicitWait = new WebDriverWait(driver, SeleniumConstants.EXPLICIT_WAIT_TIME);
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
         explicitWait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static void waitForPageToLoad(){
         ExpectedCondition<Boolean> pageLoadCondition = driver -> ((JavascriptExecutor)driver).executeScript("return document.readyState").equals(("complete"));
-        WebDriverWait wait = new WebDriverWait(driver, SeleniumConstants.EXPLICIT_WAIT_TIME);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(pageLoadCondition);
     }
 

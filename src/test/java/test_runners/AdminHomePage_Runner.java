@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/cucumberTestReports.json",
         },
-        tags = {"@adminHomePage"},
+        tags = "@adminHomePage",
         dryRun = false
 )
 public class AdminHomePage_Runner {
