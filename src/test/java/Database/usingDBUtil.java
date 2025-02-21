@@ -4,9 +4,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-//import org.testng.annotations.AfterClass;
-//import org.testng.annotations.BeforeClass;
-import util.ConfigReader;
 import util.DBType;
 import util.DBUtil;
 
@@ -14,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-public class UsingDBUtil {
+public class usingDBUtil {
 
     @BeforeClass
     public static void setUp() throws SQLException {DBUtil.establishDBConnection(DBType.ORACLE);}
@@ -37,7 +34,7 @@ public class UsingDBUtil {
         String query = "select first_name, last_name from employees where employee_id = 105";
         List<Map<String,Object>> result = DBUtil.runSQLQuery(query);
 
-        Assert.assertEquals(result.get(0).get("FIRST_NAME"),"David");
+        Assert.assertEquals("David", result.get(0).get("FIRST_NAME"));
         Assert.assertEquals(result.get(0).get("LAST_NAME"),"Austin");
     }
 

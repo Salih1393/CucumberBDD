@@ -4,7 +4,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import pages.RegisterPage;
 import step_definitions.step_impl.RegisterPage_impl;
 import util.Driver;
 import util.SeleniumUtils;

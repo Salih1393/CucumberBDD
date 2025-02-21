@@ -4,12 +4,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import pages.BookingPage;
 import step_definitions.step_impl.AdminCouponPage_Impl;
 import step_definitions.step_impl.BookingPage_Impl;
 import util.CucumberUtils;
 import util.Driver;
-import util.SeleniumUtils;
 
 public class BookingPage_STEPS {
     private static WebDriver driver = Driver.getDriver();

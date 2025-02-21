@@ -1,6 +1,5 @@
 package Database;
 
-import com.mysql.cj.protocol.Resultset;
 import util.DBConnectionManager;
 
 import java.sql.Connection;

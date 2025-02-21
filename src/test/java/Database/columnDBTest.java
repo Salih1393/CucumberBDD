@@ -1,7 +1,6 @@
 package Database;
 
 import org.junit.Test;
-
 import java.sql.*;
 
 public class columnDBTest {

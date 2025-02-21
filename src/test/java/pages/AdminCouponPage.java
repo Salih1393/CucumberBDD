@@ -1,11 +1,8 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import util.Driver;
 
@@ -26,7 +23,6 @@ public class AdminCouponPage {
 
     @FindBy(xpath = "//input[@placeholder='Percentage']")
     public WebElement percentage_field;
-    //String percentage = "Percentage";
 
     @FindBy(xpath = "//input[@placeholder='Maximum Uses']")
     public WebElement maxUses_field;
@@ -56,10 +52,5 @@ public class AdminCouponPage {
 
     @FindBy(xpath = "//a[@title='Remove']")
     public WebElement removeCoupon_Btn;
-
-//
-//    public WebElement getCouponElement(String name){
-//        return driver.findElement(By.xpath("//input[@placeholder='" + name + "']"));
-//    }
 
 }

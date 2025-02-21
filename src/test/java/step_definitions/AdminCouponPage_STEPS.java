@@ -1,18 +1,14 @@
 package step_definitions;
 
-import com.google.common.collect.Maps;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.AdminCouponPage;
 import pages.AdminHomePage;
 import step_definitions.step_impl.AdminCouponPage_Impl;
-import step_definitions.step_impl.AdminHomePage_Impl;
 import testData.Coupon;
 import util.CucumberUtils;
 import util.Driver;
